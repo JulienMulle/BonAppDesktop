@@ -1,1 +1,29 @@
-<app-header></app-header>
+<div class="item-container">
+  <div class="item-header-container">
+    <mat-form-field class="example-form-field">
+      <mat-label>Clearable input</mat-label>
+      <input matInput type="text" [(ngModel)]="value">
+      @if (value) {
+        <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+    </mat-form-field>
+    <button mat-raised-button>Ajouter
+    <mat-icon fontIcon="add"/>
+    </button>
+  </div>
+  <div class="item-card-container">
+    <app-item-card></app-item-card>
+    <app-item-card></app-item-card>
+    <app-item-card></app-item-card>
+    <app-item-card></app-item-card>
+    <app-item-card></app-item-card>
+    <app-item-card></app-item-card>
+    <app-item-card></app-item-card>
+    <app-item-card></app-item-card>
+  </div>
+</div>
+
+
+
