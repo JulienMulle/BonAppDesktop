@@ -9,7 +9,9 @@
         </button>
       }
     </mat-form-field>
-    <button mat-raised-button>Ajouter
+    <button mat-raised-button
+    (click)="openOverlay()"
+    >Ajouter
     <mat-icon fontIcon="add"/>
     </button>
   </div>
@@ -24,6 +26,5 @@
     <app-item-card></app-item-card>
   </div>
 </div>
-
 
 

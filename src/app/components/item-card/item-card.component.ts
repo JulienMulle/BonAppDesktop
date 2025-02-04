@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatCard, MatCardContent, MatCardFooter, MatCardHeader, MatCardTitle } from '@angular/material/card';
 import { MatChip, MatChipSet } from '@angular/material/chips';
 import { MatActionList } from '@angular/material/list';
@@ -29,5 +29,6 @@ import { MatButton } from '@angular/material/button';
   standalone: true
 })
 export class ItemCardComponent {
+  @Input() item: any;
 
 }
