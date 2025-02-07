@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 import { ItemFormComponent } from '../../components/item-form/item-form.component';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
+import { AsyncPipe, NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-items',
@@ -22,7 +23,9 @@ import { ComponentPortal } from '@angular/cdk/portal';
     MatInputModule,
     FormsModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    AsyncPipe,
+    NgForOf
   ],
   providers:[ItemsService],
   templateUrl: './items.component.html',
@@ -32,11 +35,10 @@ import { ComponentPortal } from '@angular/cdk/portal';
 export class ItemsComponent {
   private overlayRef: OverlayRef | undefined;
   private itemsData: ItemsService = inject(ItemsService);
-  items: Observable<Item[]> = this.itemsData.getItems();
+  items$: Observable<Item[]> = this.itemsData.getItems();
   value = '';
 
   constructor(private overlay: Overlay, private injector: Injector) {
-    this.items.subscribe((data) => console.log(data));
   }
 
 

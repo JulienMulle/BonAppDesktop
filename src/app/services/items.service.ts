@@ -16,16 +16,16 @@ export class ItemsService {
     return this.http.get<Item[]>(`${this.baseUrl}/items`);
   }
 
-  createItem(items:{ name: string }): Observable<any> {
-    return this.http.post(`${this.baseUrl}/item`, items);
+  createItem(item:{ name: string }): Observable<any> {
+    return this.http.post(`${this.baseUrl}/item`, item);
   }
 
   updateData(items: Item): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${items}`, items);
+    return this.http.put(`${this.baseUrl}/item/${items}`, items);
   }
 
 
-  deleteData(items: Item): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${items}`);
+  deleteData(itemId: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/item/${itemId}`);
   }
 }
